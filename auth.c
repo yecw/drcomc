@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <time.h>
+#include <sys/time.h>
 
 #ifdef WIN32
 #include <winsock2.h>
@@ -552,7 +553,8 @@ int dogcom(int try_times) {
                 };
             }
         }
-    } else if (strcmp(mode, "pppoe") == 0) {
+    } 
+	/* else if (strcmp(mode, "pppoe") == 0) {
         int pppoe_counter = 0;
         int keepalive_counter = 0;
         unsigned char seed[4], sip[4];  /* pppoe's seed == dhcp's KEEP_ALIVE_VERSION */
@@ -598,7 +600,7 @@ int dogcom(int try_times) {
                 }
             }
         }
-    }
+    } */
 
     printf(">>>>> Failed to keep in touch with server, exiting <<<<<\n\n");
     if (logging_flag) {
